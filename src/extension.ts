@@ -14,7 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
            console.log("is active ", ext.isActive);
            console.log("extension path ", ext.extensionPath);        
            const wsConfig = vscode.workspace.getConfiguration(undefined, vscode.Uri.file(ext.extensionPath));
-           console.log("config by path ", wsConfig.get());
+           console.log("config by path ", wsConfig);
        }
        
        
