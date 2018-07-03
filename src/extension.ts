@@ -9,19 +9,20 @@ export function activate(context: vscode.ExtensionContext) {
        
        const ext = vscode.extensions.getExtension("logarifm.vscode-hello");
        if (ext) {
-           console.log("Extension ", ext.id);
-           console.log("Package.json ", ext.packageJSON);
-           console.log("is active ", ext.isActive);
-           console.log("extension path ", ext.extensionPath);        
-           const wsConfig = vscode.workspace.getConfiguration(undefined, vscode.Uri.file(ext.extensionPath));
-           console.log("config by path ", wsConfig);
+           console.log("Extension id", ext.id);
+    //        console.log("Package.json ", ext.packageJSON);
+    //        console.log("is active ", ext.isActive);
+    //        console.log("extension path ", ext.extensionPath);        
+            const wsConfigByPath = vscode.workspace.getConfiguration(undefined, vscode.Uri.file(ext.extensionPath));
+            console.log("config by path ", wsConfigByPath);
+    //        const defWsConfig = vscode.workspace.getConfiguration();
+    //        console.log("def config ", defWsConfig);
        }
-       
-       
-        const wsConfig = vscode.workspace.getConfiguration("logarifm.vscode-hello", undefined);
 
-        // const title = wsConfig.get<string | undefined>("title");
-        console.log("Test!", wsConfig);
+        // const extConfig = vscode.workspace.getConfiguration('logarifm.vscode-hello', undefined);
+        // const property = extConfig.get<string | undefined>("typescript.useCodeSnippetsOnMethodSuggest");
+        // console.log("property " + property);
+        // console.log("Test!", extConfig);
 
         // if (title) {
         //     vscode.window.showInformationMessage(title);
